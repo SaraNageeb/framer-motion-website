@@ -1,6 +1,5 @@
 import  { useState } from "react";
-import Button from "./Button";
-import BrandName from "./BrandName";
+ import BrandName from "./BrandName";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -8,6 +7,14 @@ import "../styles/components/Navbar.scss";
 
 
 const Navbar = () => {
+  let variants = {};
+  const isMobile = (window.innerWidth < 768) ||(window.innerWidth == 768) ; //Add the width you want to check for here (now 768px)
+  if (isMobile) {
+    variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 1, x: "-100%" },
+    nothing: { opacity: 1 },
+  } }
     const [toggleNavbar, setToggleNavbar] = useState(false);
     const navbarToggler = () => {
         setToggleNavbar(!toggleNavbar);
@@ -22,7 +29,12 @@ const Navbar = () => {
                 }
             </div>
         </div>
-        <nav>
+        <motion.nav 
+       
+         animate={toggleNavbar ? "open" :  "closed"}
+        initial="nothing"
+      variants={variants}>
+        <nav></nav>
         <div className="links">
           <ul>
             <li>
@@ -39,12 +51,11 @@ const Navbar = () => {
             <li>
               <a href="#blog">Blog</a>
             </li>
-            <li>
-              <Button content="Contact" />
-            </li>
+             
           </ul>
         </div>
-      </nav>
+        
+      </motion.nav>
     </div>
   )
 }

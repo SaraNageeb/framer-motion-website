@@ -1,4 +1,14 @@
 @import "../utils/Colors.scss";
+.st0{fill:#F2F2F2;}
+	.st1{fill:#3F3D56;}
+	.st2{fill:#CCCCCC;}
+	.st3{fill:#6C63FF;}
+	.st4{fill:#E6E6E6;}
+	.st5{fill:#FF6584;}
+	.st6{fill:#FFB8B8;}
+	.st7{fill:#2F2E41;}
+	.st8{fill:#A0616A;}
+   
 .main-container {
   // margin: 0 10rem;
   margin: 0 10%;
@@ -25,22 +35,28 @@
       }
     }
     .image {
-      img {
-        height: 35rem;
-        width: 35rem;
-      }
+      font-size:0rem;
     }
   }
 }
+.imgv {
+  height: 40rem;
+  width: 52rem;
+}
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
+  
   .main-container {
     .container {
-      grid-template-columns: 1fr;
+      grid-template-columns:  1fr;
       .content {
-        margin-right: 0;
+        margin: auto; text-align: center;
         h1 {
-          font-size: 4rem;
+          font-size: 2rem; color: red;
+        }
+        button {
+          
+          margin-bottom: 3rem;
         }
         p {
           font-size: 2rem;
@@ -48,10 +64,8 @@
         }
       }
       .image {
-        margin-left: 2rem;
-        img {
-          height: 25rem;
-          width: 25rem;
+         .imgv {
+          display: none;
         }
       }
     }
@@ -60,17 +74,34 @@
 
 @media screen and (max-width: 768px) {
   html {
-    font-size: 8px;
+    font-size: 8px; color: green;
+    .imgv {
+      display: none;
+
+    }button {
+      text-align: center;
+     margin-bottom: 3rem;
+   }
+    
   }
+  
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .main-container {
     padding-bottom: 3rem;
     .container {
+      grid-template-columns:  1fr;
       .content {
+        text-align: center;
+        margin: auto;
+
         h1 {
-          font-size: 2rem;
+          font-size: 2rem; color: yellow;
+        }
+        button {
+           text-align: center;
+          margin-bottom: 3rem;
         }
         p {
           font-size: 1rem;
@@ -78,9 +109,9 @@
         }
       }
       .image {
-        img {
-          height: 30rem;
-          width: 30rem;
+        .imgv {
+          display: none;
+
         }
       }
     }

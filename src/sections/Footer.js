@@ -16,7 +16,7 @@ const Footer = () => {
           >
             <BrandName isFooter={true} />
             <p>
-              Join our newsletter to get updated with our Offers  Discounts.
+            https://blog.maximeheckel.com/posts/advanced-animation-patterns-with-framer-motion/
             </p>
             <div className="mail">
               <input type="email" placeholder="Please Enter Your Email" />

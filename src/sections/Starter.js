@@ -4,31 +4,44 @@ import { GoPlay } from "react-icons/go";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
-
+import WorkImgAnimation from "../utils/WorkImgAnimation"
+import { headerAnimation,showfomRight } from "../utils/Animations";
+import { motion } from "framer-motion";
 
 const Starter = () => {
   return (
      <div className="main-container" >
          <Navbar />
         <div className="container">
-           <div className="content">
+           <motion.div className="content"
+           variants={headerAnimation}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false , amount: 0.4  }}
+           transition="transition"
+           
+           >
                 <h1>
-                    We Provide Solutions to Help You to Build or Grow Your Buisness!
+                    Grow Your Buisness!
                 </h1>
                 <p>
                     A professional web and mobile app development agency with over 100+
-                    web and app developed. We provide a high- quality service in web and
-                    mobile app development as well as in design.
+                    web and app developed.
                 </p>
                 <div className="button-container">
-                   <Button content="Watch Video" icon={<GoPlay />} />
-                   <Button  color="pink" content="Request Quote"  icon={<HiOutlineArrowNarrowRight />}
+                   <Button content="Watch " icon={<GoPlay />} />  <br/>
+                   <Button  color="pink" content="Request"  icon={<HiOutlineArrowNarrowRight />}
             />
                 </div> 
-            </div> 
-            <div className="image">
-                <img src={WorkImage} alt="People working" />
-            </div> 
+            </motion.div>
+            <motion.div className="image"variants={showfomRight}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false , amount: 0.8  }}
+           transition="transition">
+                           <WorkImgAnimation/>
+
+            </motion.div> 
         </div>
     </div>
    
